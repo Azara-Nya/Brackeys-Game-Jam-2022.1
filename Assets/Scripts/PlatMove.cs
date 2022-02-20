@@ -51,12 +51,20 @@ public class PlatMove : MonoBehaviour
         {
 
             jumpBufferCounter = jumpBufferTime;
-            JumpSFX.Play();
+            if (isGrounded)
+            {
+                JumpSFX.Play();
+            }
+            else
+            {
+                JumpSFX.Stop();
+            }
         }
         else
         {
             jumpBufferCounter -= Time.deltaTime;
         }
+
 
         movement.x = Input.GetAxisRaw("Horizontal");
         if (coyoteTimer > 0f && jumpBufferCounter > 0f)
@@ -86,7 +94,6 @@ public class PlatMove : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            JumpSFX.Stop();
             isJumping = false;
             coyoteTimer = 0f;
         }
