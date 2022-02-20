@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 512603889}
   - component: {fileID: 512603888}
   - component: {fileID: 512603887}
+  - component: {fileID: 512603890}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -266,6 +267,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &512603890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512603886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48ece219b52d8647abade04cbd4ebbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 759944937}
+  smoothing: 0.1
+  maxPosition: {x: Infinity, y: Infinity}
+  minPosition: {x: -Infinity, y: -Infinity}
 --- !u!1 &759944932
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +318,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -346,11 +363,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 759944933}
-  moveSpeed: 15
+  moveSpeed: 10
   JumpSpeed: 15
-  JumpTime: 0.1
+  JumpTime: 1
   checkRadius: 0.5
-  coyoteTime: 0.25
+  coyoteTime: 0.15
   isGrounded: 0
   hitRoof: 0
   feetPos: {fileID: 339632076}

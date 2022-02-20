@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\PlatMove.cs" />
+     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Reference Include="UnityEngine">
         <HintPath>E:\unity\2020.3.27f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
