@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2998042482284468309}
-  moveSpeed: 10
+  moveSpeed: 7.5
   JumpSpeed: 15
   JumpTime: 1
   checkRadius: 0.5
