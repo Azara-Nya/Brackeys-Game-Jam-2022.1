@@ -11,6 +11,13 @@ public class BoxManager : MonoBehaviour
     [SerializeField] private float total;
     [SerializeField] private float transtionTime = 1f;
     [SerializeField] private string Level;
+    [SerializeField] private GameObject Text;
+    [SerializeField] private float TextTime = 2f;
+
+    void Start()
+    {
+        Text.SetActive(false);
+    }
     void Update()
     {
         total = Normal + Red + Blue;
@@ -23,6 +30,9 @@ public class BoxManager : MonoBehaviour
 
     IEnumerator Loader(string Gary)
     {
+        //Better with animation
+        Text.SetActive(true);
+        yield return new WaitForSeconds(TextTime);
         // transtion.SetTrigger("StartFade");
         yield return new WaitForSeconds(transtionTime);
 
