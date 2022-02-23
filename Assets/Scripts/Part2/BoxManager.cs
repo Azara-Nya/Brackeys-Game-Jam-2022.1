@@ -13,6 +13,8 @@ public class BoxManager : MonoBehaviour
     [SerializeField] private string Level;
     [SerializeField] private GameObject Text;
     [SerializeField] private float TextTime = 2f;
+    [SerializeField] private Animator transtion;
+    [SerializeField] private bool five = false;
 
     void Start()
     {
@@ -30,12 +32,25 @@ public class BoxManager : MonoBehaviour
 
     IEnumerator Loader(string Gary)
     {
-        //Better with animation
-        Text.SetActive(true);
-        yield return new WaitForSeconds(TextTime);
-        // transtion.SetTrigger("StartFade");
-        yield return new WaitForSeconds(transtionTime);
+        if (!five)
+        {
+            //Better with animation
+            Text.SetActive(true);
+            yield return new WaitForSeconds(TextTime);
+            transtion.SetTrigger("StartFade");
+            yield return new WaitForSeconds(transtionTime);
 
-        SceneManager.LoadScene(Gary);
+            SceneManager.LoadScene(Gary);
+        }
+        else
+        {
+            //Better with animation
+            Text.SetActive(true);
+            yield return new WaitForSeconds(TextTime);
+            transtion.SetTrigger("StartFadeWhite");
+            yield return new WaitForSeconds(transtionTime);
+
+            SceneManager.LoadScene(Gary);
+        }
     }
 }

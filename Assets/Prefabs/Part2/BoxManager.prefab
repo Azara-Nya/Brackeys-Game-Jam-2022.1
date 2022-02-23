@@ -49,3 +49,7 @@ MonoBehaviour:
   total: 0
   transtionTime: 1
   Level: dafdafas
+  Text: {fileID: 0}
+  TextTime: 2
+  transtion: {fileID: 0}
+  five: 0
