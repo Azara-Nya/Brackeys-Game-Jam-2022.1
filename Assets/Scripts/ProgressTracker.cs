@@ -6,7 +6,13 @@ public class ProgressTracker : MonoBehaviour
 {
     [SerializeField] private GameObject[] photos;
     [SerializeField] private GameObject[] voidPhotos;
-    [SerializeField] private static bool[] photosUnlock;
+    public bool[] photosUnlock;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Update()
     {
         if (photosUnlock[1])
