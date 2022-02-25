@@ -1768,7 +1768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8287134224230568234, guid: 8074fa1511323e8429e030977caa4f4d, type: 3}
       propertyPath: Level
-      value: MainMenu
+      value: Part3
       objectReference: {fileID: 0}
     - target: {fileID: 8287134224230568234, guid: 8074fa1511323e8429e030977caa4f4d, type: 3}
       propertyPath: transtion

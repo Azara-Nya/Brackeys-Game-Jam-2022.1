@@ -8,6 +8,9 @@ TagManager:
   - Box
   - BoxRed
   - BoxBlue
+  - Void2
+  - Void
+  - Photo2
   layers:
   - Default
   - TransparentFX
