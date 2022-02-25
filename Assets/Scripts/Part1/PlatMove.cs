@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class PlatMove : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class PlatMove : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
 
         float moveInput = Input.GetAxis("Horizontal");
         if (facingRight == false && moveInput > 0)
@@ -113,5 +119,6 @@ public class PlatMove : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
+
 }
 
