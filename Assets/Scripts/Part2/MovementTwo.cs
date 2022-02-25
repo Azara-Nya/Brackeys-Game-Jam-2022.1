@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementTwo : MonoBehaviour
 {
@@ -13,5 +14,11 @@ public class MovementTwo : MonoBehaviour
         Movement.y = Input.GetAxisRaw("Vertical");
 
         rb.MovePosition(rb.position + Movement * moveSpeed * Time.fixedDeltaTime);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); ;
+        }
     }
+
 }
