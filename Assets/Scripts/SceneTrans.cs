@@ -8,9 +8,13 @@ public class SceneTrans : MonoBehaviour
     [SerializeField] private string sceneToLoad;
     [SerializeField] private Vector2 playerPosition;
     [SerializeField] private Animator transtion;
-    // [SerializeField] private Animator Self;
+    [SerializeField] private Animator Self;
     [SerializeField] private float transtionTime = 1f;
     [SerializeField] private bool five = false;
+    [SerializeField] private bool two;
+    [SerializeField] private bool three;
+    [SerializeField] private bool four;
+    [SerializeField] private bool one;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,8 +34,22 @@ public class SceneTrans : MonoBehaviour
     {
         if (!five)
         {
-            //Self.SetTrigger("Run");
-            //yield return new WaitForSeconds(transtionTime);
+            if (one)
+            {
+                Self.SetTrigger("Walk");
+            }
+            if (two)
+            {
+                Self.SetTrigger("Walk2");
+            }
+            if (three)
+            {
+                Self.SetTrigger("Walk3");
+            }
+            if (four)
+            {
+                Self.SetTrigger("Walk4");
+            }
             transtion.SetTrigger("StartFade");
             yield return new WaitForSeconds(transtionTime);
 
@@ -39,8 +57,7 @@ public class SceneTrans : MonoBehaviour
         }
         else
         {
-            //Self.SetTrigger("Run");
-            //yield return new WaitForSeconds(transtionTime);
+            Self.SetTrigger("Walk5");
             transtion.SetTrigger("StartFadeWhite");
             yield return new WaitForSeconds(transtionTime);
 

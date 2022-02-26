@@ -544,6 +544,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347185, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347185, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347196, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_Radius
+      value: 0.65371174
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347196, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.28622156
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347196, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0053004026
+      objectReference: {fileID: 0}
     - target: {fileID: 376349382229347198, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -554,7 +574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376349382229347198, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.55
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 376349382229347198, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -587,6 +607,10 @@ PrefabInstance:
     - target: {fileID: 376349382229347198, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347199, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: two
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 376349382229347199, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: transtion
