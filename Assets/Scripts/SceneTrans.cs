@@ -9,12 +9,14 @@ public class SceneTrans : MonoBehaviour
     [SerializeField] private Vector2 playerPosition;
     [SerializeField] private Animator transtion;
     [SerializeField] private Animator Self;
+    [SerializeField] private Animator Camera;
     [SerializeField] private float transtionTime = 1f;
     [SerializeField] private bool five = false;
     [SerializeField] private bool two;
     [SerializeField] private bool three;
     [SerializeField] private bool four;
     [SerializeField] private bool one;
+    [SerializeField] private float CamTim;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -58,6 +60,8 @@ public class SceneTrans : MonoBehaviour
         else
         {
             Self.SetTrigger("Walk5");
+            Camera.SetTrigger("Stert");
+            yield return new WaitForSeconds(CamTim);
             transtion.SetTrigger("StartFadeWhite");
             yield return new WaitForSeconds(transtionTime);
 

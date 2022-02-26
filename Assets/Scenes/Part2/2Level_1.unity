@@ -2017,10 +2017,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7016170512567276338, guid: 8c9e669b8b4a92f44b683338dd2c4eaf, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7016170512567276342, guid: 8c9e669b8b4a92f44b683338dd2c4eaf, type: 3}
       propertyPath: m_Name
       value: Play2

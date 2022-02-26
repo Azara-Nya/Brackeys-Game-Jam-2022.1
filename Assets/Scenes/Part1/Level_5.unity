@@ -24004,6 +24004,7 @@ GameObject:
   - component: {fileID: 1250350070}
   - component: {fileID: 1250350069}
   - component: {fileID: 1250350068}
+  - component: {fileID: 1250350072}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -24024,9 +24025,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1735095966}
-  smoothing: 0.1
+  smoothing: 1
   maxPosition: {x: 31, y: 28}
-  minPosition: {x: 0, y: 0}
+  minPosition: {x: 0, y: 0.5}
 --- !u!81 &1250350069
 AudioListener:
   m_ObjectHideFlags: 0
@@ -24092,6 +24093,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1250350072
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250350067}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1f3e4f1ce0e9754e884557745a8b58b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1269373125
 GameObject:
   m_ObjectHideFlags: 0
@@ -24198,17 +24218,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle
       objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347185, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347196, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_Radius
+      value: 1.7079954
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347196, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347196, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.2079954
+      objectReference: {fileID: 0}
     - target: {fileID: 376349382229347198, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 376349382229347198, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.412563
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 376349382229347198, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.6360216
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 376349382229347198, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24246,6 +24282,14 @@ PrefabInstance:
       propertyPath: five
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347199, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: CamTim
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 376349382229347199, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1250350072}
     - target: {fileID: 376349382229347199, guid: 092aeed85cb396744a835f9ad4383bc9, type: 3}
       propertyPath: transtion
       value: 

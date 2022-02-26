@@ -31,11 +31,6 @@ public class PlatMove : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-
         float moveInput = Input.GetAxis("Horizontal");
         if (facingRight == false && moveInput > 0)
         {
@@ -53,72 +48,80 @@ public class PlatMove : MonoBehaviour
         {
             coyoteTimer -= Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (moveInput == 0)
         {
-
-            jumpBufferCounter = jumpBufferTime;
-            if (isGrounded)
-            {
-                JumpSFX.Play();
-            }
-            else
-            {
-                JumpSFX.Stop();
-            }
+            animator.SetBool("IsRunning", false);
         }
         else
         {
-            jumpBufferCounter -= Time.deltaTime;
-        }
-
-
-        movement.x = Input.GetAxisRaw("Horizontal");
-        if (coyoteTimer > 0f && jumpBufferCounter > 0f)
-        {
-            JumpTimeCounter = JumpTime;
-            coyoteTimer = coyoteTime;
-            isJumping = true;
-            rb.velocity = Vector2.up * JumpSpeed;
-            jumpBufferCounter = 0f;
-        }
-        if (Input.GetKey(KeyCode.Space) && isJumping)
-        {
-            if (JumpTimeCounter > 0 && coyoteTimer > 0)
+            animator.SetBool("IsRunning", true);
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                rb.velocity = Vector2.up * JumpSpeed;
-                JumpTimeCounter -= Time.deltaTime;
-                coyoteTimer -= Time.deltaTime;
+
+                jumpBufferCounter = jumpBufferTime;
+                if (isGrounded)
+                {
+                    JumpSFX.Play();
+                }
+                else
+                {
+                    JumpSFX.Stop();
+                }
             }
             else
             {
-                isJumping = false;
+                jumpBufferCounter -= Time.deltaTime;
             }
-        }
-        if (hitRoof)
-        {
-            JumpTimeCounter = 0;
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-            coyoteTimer = 0f;
-        }
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-        hitRoof = Physics2D.OverlapCircle(headPos.position, checkRadius, whatIsGround);
-    }
-    void flip()
-    {
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
-    }
 
+
+            movement.x = Input.GetAxisRaw("Horizontal");
+            if (coyoteTimer > 0f && jumpBufferCounter > 0f)
+            {
+                JumpTimeCounter = JumpTime;
+                coyoteTimer = coyoteTime;
+                isJumping = true;
+                rb.velocity = Vector2.up * JumpSpeed;
+                jumpBufferCounter = 0f;
+            }
+            if (Input.GetKey(KeyCode.Space) && isJumping)
+            {
+                if (JumpTimeCounter > 0 && coyoteTimer > 0)
+                {
+                    rb.velocity = Vector2.up * JumpSpeed;
+                    JumpTimeCounter -= Time.deltaTime;
+                    coyoteTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    isJumping = false;
+                }
+            }
+            if (hitRoof)
+            {
+                JumpTimeCounter = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                isJumping = false;
+                coyoteTimer = 0f;
+            }
+            isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+            hitRoof = Physics2D.OverlapCircle(headPos.position, checkRadius, whatIsGround);
+        }
+        void flip()
+        {
+            facingRight = !facingRight;
+            Vector3 Scaler = transform.localScale;
+            Scaler.x *= -1;
+            transform.localScale = Scaler;
+        }
+
+
+    }
     void FixedUpdate()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
     }
-
 }
 
